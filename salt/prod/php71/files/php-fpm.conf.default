@@ -1,0 +1,3 @@
+[global]
+include={{ pillar['php71']['prefix'] }}/etc/php-fpm.d/*.conf
+

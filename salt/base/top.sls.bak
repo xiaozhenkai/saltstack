@@ -1,0 +1,8 @@
+base:
+  '*':
+    - init.env_init
+prod:
+  '*':
+    - php56.install
+    - nginx_compile.service
+    - web.add_website

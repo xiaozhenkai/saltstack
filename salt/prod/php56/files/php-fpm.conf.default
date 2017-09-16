@@ -1,0 +1,3 @@
+[global]
+include={{ pillar['php56']['prefix'] }}/etc/php-fpm.d/*.conf
+
