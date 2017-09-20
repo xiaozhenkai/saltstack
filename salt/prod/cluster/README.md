@@ -25,3 +25,32 @@ vrrp_instanceVI_1 {    //每一个vrrp_instance就是定义一个虚拟路由器
 ```
 
 > 确保两台的防火墙都要放开，不然会出现两台keepalived检测不到对方的健康状态然后两台都开启VIP
+
+
+```
+    {% if grains['fqdn'] == 'saltstack-node1.example.com' %}
+    - ROUTEID: haproxy_ha
+    - STATEID: MASTER
+    - PRIORITYID: 150
+
+    {% elif grains['fqdn'] == 'saltstack-node2.example.com' %}
+    - ROUTEID: haproxy_ha
+    - STATEID: BACKUP
+    - PRIORITYID: 100
+    {% endif %}
+```
+把需要做keepalived的两台机器的hostname改成saltstack-node1.example.com和saltstack-node2.example.com
+
+然后用salt命令`salt '*' grains.item fqdn`查看fqdn
+
+```
+saltstack-node2.example.com:
+    ----------
+    fqdn:
+        saltstack-node2.example.com
+web:
+    ----------
+    fqdn:
+        saltstack-node1.example.com
+
+```
