@@ -3,4 +3,5 @@ base:
     - init.env_init
 prod:
   '*':
-    - php56.install
+    - cluster.haproxy-outside
+    - cluster.haproxy-outside-keepalived
