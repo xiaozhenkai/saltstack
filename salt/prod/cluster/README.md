@@ -25,9 +25,9 @@ vrrp_instanceVI_1 {    //每一个vrrp_instance就是定义一个虚拟路由器
 }
 ```
 
-> 确保两台的防火墙都要放开，不然会出现两台keepalived检测不到对方的健康状态然后两台都开启VIP
+> **注意：** 确保两台的防火墙都要放开，不然会出现两台keepalived检测不到对方的健康状态然后两台都开启VIP
 
-
+------
 ```
     {% if grains['fqdn'] == 'saltstack-node1.example.com' %}
     - ROUTEID: haproxy_ha
@@ -40,11 +40,13 @@ vrrp_instanceVI_1 {    //每一个vrrp_instance就是定义一个虚拟路由器
     - PRIORITYID: 100
     {% endif %}
 ```
-把需要做keepalived的两台机器的hostname改成saltstack-node1.example.com和saltstack-node2.example.com
+> 把需要做keepalived的两台机器的hostname改成saltstack-node1.example.com和saltstack-node2.example.com
 
 然后用salt命令`salt '*' grains.item fqdn`查看fqdn
+> **扩展：** 全域名（FQDN，Fully Qualified Domain Name）是指主机名加上全路径，全路径中列出了序列中所有域成员。全域名可以从逻辑上准确地表示出主机在什么地方，也可以说全域名是主机名的一种完全表示形式。
 
 ```
+salt '*' grains.item fqdn
 saltstack-node2.example.com:
     ----------
     fqdn:
