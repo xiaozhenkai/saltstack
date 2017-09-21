@@ -30,8 +30,10 @@ cd haproxy-1.5.19/examples/
 
 修改**启动脚本**,文件在haproxy/examples/haproxy.init
 
-`sed -i 's/\/usr\/sbin\/'\$BASENAME'/\/usr\/local\/haproxy\/sbin\/'\$BASENAME'/g' haproxy.init`
-`cp haproxy.init /srv/salt/prod/haproxy/files/`
+```
+sed -i 's/\/usr\/sbin\/'\$BASENAME'/\/usr\/local\/haproxy\/sbin\/'\$BASENAME'/g' haproxy.init
+cp haproxy.init /srv/salt/prod/haproxy/files/
+```
 ---------
 ## 参考
 ### [HAProxy从零开始到掌握](http://www.jianshu.com/p/c9f6d55288c0)
