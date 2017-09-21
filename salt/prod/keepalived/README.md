@@ -34,8 +34,8 @@ cp keepalived/etc/init.d/keepalived.sysconfig /srv/salt/prod/keepalived/files/
 ```
 **由于这次默认安装keepalived到/usr/local/keepalived目录下，所以需要修改源码包里面的init脚本**
 ```
-<     daemon keepalived ${KEEPALIVED_OPTIONS}
+<  将  daemon keepalived ${KEEPALIVED_OPTIONS}
 ---
->     daemon /usr/local/keepalived/sbin/keepalived ${KEEPALIVED_OPTIONS}
+> 改成 daemon /usr/local/keepalived/sbin/keepalived ${KEEPALIVED_OPTIONS}
 
 ```
