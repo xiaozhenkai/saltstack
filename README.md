@@ -30,7 +30,7 @@ file_roots:
 
 
 ### salt-minion:
-`vim /etc/salt/master`
+`vim /etc/salt/minion`
 ```
 master: 192.168.0.8
 
