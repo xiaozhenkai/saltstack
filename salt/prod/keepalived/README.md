@@ -21,5 +21,21 @@
 
 
 **下载源文件**
+```
+cd /usr/local/src
+wget http://www.keepalived.org/software/keepalived-1.2.17.tar.gz
+tar xf keepalived-1.2.17.tar.gz
+cd keepalived-1.2.17
+```
+**把需要的init脚本和sysconfig复制到files目录下**
+```
+cp keepalived/etc/init.d/keepalived.init /srv/salt/prod/keepalived/files/
+cp keepalived/etc/init.d/keepalived.sysconfig /srv/salt/prod/keepalived/files/
+```
+**由于这次默认安装keepalived到/usr/local/keepalived目录下，所以需要修改源码包里面的init脚本**
+```
+<     daemon keepalived ${KEEPALIVED_OPTIONS}
+---
+>     daemon /usr/local/keepalived/sbin/keepalived ${KEEPALIVED_OPTIONS}
 
-`wget http://www.keepalived.org/software/keepalived-1.2.17.tar.gz`
+```
