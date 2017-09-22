@@ -1,4 +1,10 @@
-### Keepalived配置文件
+**haproxy和keepalived的安装不在这里进行，这里复制配置下发，haproxy和keepalived的安装请点击下面的超链接跳转到对应目录**
+### [haproxy安装](../haproxy)
+### [keepalived安装](../keepalived)
+
+------
+
+### Keepalived配置文件以及说明
 ```
 global_defs{
    notification_email {
