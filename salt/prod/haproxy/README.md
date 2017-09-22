@@ -37,3 +37,4 @@ cp haproxy.init /srv/salt/prod/haproxy/files/
 ---------
 ## 参考
 ### [HAProxy从零开始到掌握](http://www.jianshu.com/p/c9f6d55288c0)
+### [搭建过程中遇到的问题](./QA.md)
