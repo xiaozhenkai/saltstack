@@ -1,5 +1,5 @@
 ### 写在前面
-> **注意：** 为了保持安装的独立性，我们在install.sls里并没有编写haproxy配置文件和服务的管理，haproxy和keepalived的配置文件和服务的管理在cluster业务模块里,结构如下:
+> **注意：** 为了保持安装的独立性，我们在install.sls里并没有编写haproxy配置文件和服务的管理，haproxy和keepalived的配置文件和服务的管理在[**cluster业务模块**](../cluster)里,结构如下:
 ```
 /srv/salt/prod/cluster
 ├── files
