@@ -39,3 +39,6 @@ cp keepalived/etc/init.d/keepalived.sysconfig /srv/salt/prod/keepalived/files/
 > 改成 daemon /usr/local/keepalived/sbin/keepalived ${KEEPALIVED_OPTIONS}
 
 ```
+
+### 扩展
+#### [详解keepalived配置和使用](http://lanlian.blog.51cto.com/6790106/1303195)
